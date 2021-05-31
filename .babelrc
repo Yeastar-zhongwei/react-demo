@@ -1,23 +1,24 @@
 {
-    "presets": [
-        [
-            "@babel/preset-env",
-            {
-                "modules": false,
-                "targets": {
-                    "browsers": ["> 1%", "last 2 versions", "not ie <= 8"]
-                }
-            }
-        ],
-        "@babel/preset-react"
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "modules": false,
+        "targets": {
+          "browsers": ["> 1%", "last 2 versions", "not ie <= 8"]
+        }
+      }
     ],
-    "plugins": [
-        [
-            "@babel/plugin-transform-runtime",
-            {
-                "corejs": 2, // polyfill 需要使用@babel/runtime-corejs2
-                "useBuildIns": "usage" //按需引入,即使用什么新特性打包什么新特性, 可以减小打包的体积
-            }
-        ]
+    "@babel/preset-react"
+  ],
+  "plugins": [
+    // 下面这个选项是引用插件来处理代码的转换，transform-runtime用来处理全局函数和优化babel编译
+    [
+      "@babel/plugin-transform-runtime",
+      {
+        "corejs": 2, // polyfill 需要使用@babel/runtime-corejs2
+        "useBuildIns": "usage" //按需引入,即使用什么新特性打包什么新特性, 可以减小打包的体积
+      }
     ]
+  ]
 }

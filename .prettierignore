@@ -1,0 +1,13 @@
+**/*.svg
+package.json
+/dist
+.eslintignore
+*.png
+.editorconfig
+.gitignore
+.prettierignore
+.eslintcache
+*.lock
+yarn-error.log
+/build
+/public
